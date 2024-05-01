@@ -8,6 +8,7 @@ jobs:
     name: Build & Deploy to GitHub Pages
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      CACHE_DIR: ${{ github.workspace }}/cache
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
