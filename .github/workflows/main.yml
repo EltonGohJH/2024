@@ -8,10 +8,11 @@ jobs:
     name: Build & Deploy to GitHub Pages
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      CACHE_DIR: "node_modules/.cache/gh-pages"
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '16'
       - run: npm i -g markbind-cli
       - run: markbind deploy --ci
